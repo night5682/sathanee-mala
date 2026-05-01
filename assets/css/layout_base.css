@@ -1,0 +1,45 @@
+/* 1. คุมหน้าจอไม่ให้ไถออกข้าง (สำคัญมาก) */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Container หลักที่คุม Sidebar และ Content */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* 3. คุม Sidebar (ในคอมให้คงที่ ในมือถือให้ยืดหยุ่น) */
+.sidebar {
+    width: 240px;      /* ขนาดมาตรฐาน */
+    flex-shrink: 0;    /* ล็อคความกว้างในจอคอมไม่ให้โดนเบียด */
+    transition: 0.3s;
+}
+
+/* 4. พื้นที่เนื้อหาหลัก (ให้ขยายตามจอที่เหลือ) */
+.content-body {
+    flex-grow: 1;      /* กินพื้นที่ว่างทั้งหมด */
+    width: 100%;       /* ป้องกันเนื้อหาภายในดันจนจอเบี้ยว */
+    padding: 20px;
+    background-color: #f8fafc; /* หรือสีที่พี่ชอบ */
+}
+
+/* 5. จุดเปลี่ยนหน้าจอ (Responsive Breakpoint) */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* มือถือ: Sidebar อยู่บน Content อยู่ล่าง */
+    }
+
+    .sidebar {
+        width: 100%;    /* มือถือ: ให้กว้างเต็มจอ */
+        height: auto;   /* ความสูงตามจำนวนเมนู */
+    }
+
+    .content-body {
+        padding: 15px;  /* ลดพื้นที่ขอบลงเพื่อให้แสดงตาราง/ข้อมูลได้กว้างขึ้น */
+    }
+}

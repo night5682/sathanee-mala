@@ -1,0 +1,71 @@
+/* --- โครงสร้างหลัก (Desktop & Mobile) --- */
+.main-wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden; /* ป้องกันหน้าจอส่าย */
+}
+
+/* Sidebar คงที่ */
+.sidebar {
+    width: 260px;
+    min-width: 260px;
+    background: #1a1a1a;
+    color: white;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* ส่วนเนื้อหา */
+.content-container {
+    flex-grow: 1;
+    min-width: 0;
+    background: #f8fafc;
+}
+
+.main-content {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- สำหรับหน้าจอมือถือ (Responsive) --- */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed; /* ล็อกไว้กับหน้าจอ */
+        left: -260px;    /* ซ่อนไว้ด้านซ้ายสุด */
+        top: 0;
+    }
+
+    /* เมื่อสั่งให้เปิด Sidebar (เพิ่มคลาสผ่าน JS) */
+    .sidebar.active {
+        left: 0;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.3);
+    }
+
+    .main-content {
+        padding: 15px; /* ลดระยะขอบในมือถือ */
+        margin-top: 60px; /* เว้นที่ให้ปุ่มเมนูบนหัว */
+    }
+
+    /* ปุ่มเปิดเมนูสำหรับมือถือ (จะโชว์เฉพาะในมือถือ) */
+    .mobile-nav-toggle {
+        display: block !important;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 1100;
+        background: #1a1a1a;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+}
+
+/* ซ่อนปุ่มเปิดเมนูในจอคอม */
+.mobile-nav-toggle {
+    display: none;
+}

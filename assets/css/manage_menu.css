@@ -1,0 +1,143 @@
+/* ส่วนหัวหน้า */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: 26px;
+    color: #1e293b;
+}
+
+.btn-add-new {
+    background: #1a1a1a;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-add-new:hover {
+    background: #444;
+    transform: translateY(-2px);
+}
+
+/* ตาราง */
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.owner-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.owner-table th {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 2px solid #f1f5f9;
+    color: #64748b;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.owner-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+/* รูปภาพในตาราง */
+.menu-img-thumb {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* ข้อมูลเมนูและดาว */
+.menu-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.menu-text strong {
+    display: block;
+    font-size: 16px;
+    color: #1e293b;
+}
+
+.menu-text small {
+    color: #94a3b8;
+}
+
+.star-btn {
+    font-size: 18px;
+    color: #cbd5e1;
+    transition: 0.2s;
+}
+
+.star-btn.active {
+    color: #fbbf24;
+}
+
+.star-btn:hover {
+    transform: scale(1.2);
+}
+
+/* ราคา */
+.menu-price {
+    font-weight: bold;
+    color: #1e293b;
+    font-size: 16px;
+}
+
+/* Badge สถานะ */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    width: 85px;
+    text-align: center;
+}
+
+.status-on {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.status-off {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+/* ปุ่มจัดการ */
+.action-btns {
+    display: flex;
+    gap: 15px;
+    font-size: 18px;
+}
+
+.edit-btn { color: #3b82f6; }
+.delete-btn { color: #ef4444; }
+
+.action-btns a:hover {
+    transform: scale(1.1);
+}
+
+.empty-row {
+    text-align: center;
+    padding: 60px !important;
+    color: #94a3b8;
+}
